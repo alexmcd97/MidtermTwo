@@ -1,0 +1,38 @@
+@model MidTermTwo.Models.MathOperation
+
+<p>@ViewData["Message"]</p>
+
+<form asp-controller="Math" asp-action="ShowCalculationResults" class="form-horizontal" method="Post">
+
+<fieldset>
+<legend>Do Calculation</legend>
+<div class="form-group">
+    
+<label class="col-md-4 control-label" for="textinput">First Operand</label>
+<div class="col-md-6">
+    <input asp-for="@Model.LeftOperand" type="text" class="form-control input-md">
+</div>
+</div>
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Operator</label>
+<div class="col-md-6">
+    <input asp-for="@Model.Operator" type="radio" value="+"> Addition 
+    <input asp-for="@Model.Operator" type="radio" value="-"> Subtraction 
+    <input asp-for="@Model.Operator" type="radio" value="*"> Multiplication
+    <input asp-for="@Model.Operator" type="radio" value="/"> Division
+</div>
+</div>
+
+<div class="form-group">
+<label class="col-md-4 control-label" for="textinput">Second Operand</label>
+<div class="col-md-6">
+    <input asp-for="@Model.RightOperand" type="text" class="form-control input-md">
+</div>
+</div>
+
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+</fieldset>
+
+</form>
